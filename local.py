@@ -9,6 +9,6 @@ NUM_TILES_ROW = 7
 NUM_TILES_TOTAL = NUM_TILES_COL * NUM_TILES_ROW
 MARGIN = 5
 
-ASSET_DIR =   r'C:\Users\LENOVO\BTLKTLT\assets\animal'
+ASSET_DIR =   r'ssets\animal'
 ASSET_FILES = [x for x in os.listdir(ASSET_DIR) if x[-3:].lower() == 'png']
 assert len(ASSET_FILES) == 28
