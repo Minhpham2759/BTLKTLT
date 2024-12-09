@@ -2,6 +2,10 @@ import pygame
 from local import *
 from music import Playmusic
 
+def load_image(path):
+    image = pygame.image.load(path).convert()
+    return image
+
 class OpeningScene:
     def __init__(self, screen, manager):
         self.screen = screen
@@ -16,13 +20,13 @@ class OpeningScene:
         self.button_sound_off = pygame.image.load("assets/mute_icon.png")
 
         # Thay đổi kích thước các nút
-        self.button_play = pygame.transform.scale(self.button_play, (180, 80))
+        self.button_play = pygame.transform.scale(self.button_play, (500, 175))
         self.button_settings = pygame.transform.scale(self.button_settings, (80, 80))
         self.button_sound_on = pygame.transform.scale(self.button_sound_on, (80, 80))
         self.button_sound_off = pygame.transform.scale(self.button_sound_off, (80, 80))
 
         self.buttons = {
-            "play": self.button_play.get_rect(center =(SCREEN_WIDTH // 2 , SCREEN_HEIGHT - 100)),
+            "play": self.button_play.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT //2)),
             "settings": self.button_settings.get_rect(topright=(SCREEN_WIDTH - 10, 10)),
             "sound": self.button_sound_on.get_rect(topright=(SCREEN_WIDTH - 100, 10)),
         }
@@ -31,8 +35,6 @@ class OpeningScene:
 
         self.music_player = Playmusic()
         self.music_player.play_open_sound()
-
-
 
     def handle_events(self):
         for event in pygame.event.get():
@@ -61,7 +63,9 @@ class OpeningScene:
     def render(self):
         # Vẽ ảnh nền
         self.screen.blit(self.bg_image, (0, 0))
+        
 
+        
         # Vẽ các nút
         self.screen.blit(self.button_play, self.buttons["play"])
         self.screen.blit(self.button_settings, self.buttons["settings"])
