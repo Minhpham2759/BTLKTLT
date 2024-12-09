@@ -1,15 +1,10 @@
 import pygame
 from local import *
-
 from scenes.opening import OpeningScene
-
 from scenes.settings import OpenSettingScene
 from scenes.settings import PlaySettingScene
-
 from scenes.level import LevelScene
-
 from scenes.playing import PlayingScene
-
 from scenes.ending import CongratulationsScene
 from scenes.ending import GameOverScene
 
