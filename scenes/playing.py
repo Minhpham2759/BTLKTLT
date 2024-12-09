@@ -4,7 +4,9 @@ from scenes.animal import Animal
 from time import sleep
 from music import Playmusic
 
-
+def load_image(path):
+    image = pygame.image.load(path).convert()
+    return image
 
 class PlayingScene:
     def __init__(self, screen, manager):
@@ -119,10 +121,13 @@ class PlayingScene:
                     total_skipped += 1
 
         elapsed_time = pygame.time.get_ticks() - self.start_time  # Thời gian từ khi bắt đầu
-        seconds = elapsed_time // 1000  # Chuyển đổi thời gian từ milliseconds sang seconds
-        font = pygame.font.SysFont("Arial", 50)
-        time_text = font.render(f"{seconds}s", True, (25, 25, 255))  # Màu trắng cho văn bản
-        self.screen.blit(time_text, (200, 10))  # Vẽ thời gian ở góc trên bên trái
+        total_seconds = elapsed_time // 1000  # Chuyển đổi sang giây
+        minutes = total_seconds // 60
+        seconds = total_seconds % 60  # Chuyển đổi thời gian từ milliseconds sang seconds
+        
+        font =  pygame.font.Font("assets/font.ttf", 60)
+        time_text = font.render(f"{minutes:02}:{seconds:02}", True, (255, 255, 255))  # Màu trắng cho văn bản
+        self.screen.blit(time_text, (280, -15))  # Vẽ thời gian ở góc trên bên trái
 
 
         if self.level == 2:
