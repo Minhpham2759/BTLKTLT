@@ -3,10 +3,10 @@ import pygame
 class Playmusic:
     def __init__(self):
         # Đặt đường dẫn đến nhạc nền cho từng màn hình
-        self.open_sound = "assets/opening_sound.mp3"  # Nhạc nền cho màn hình Open
-        self.play_sound = "assets/playing_sound.mp3"  # Nhạc nền cho màn hình Play
-        self.win_sound = "assets/winning_sound.mp3"  # Nhạc nền cho màn hình Win
-        self.lose_sound = "assets/lose_sound.mp3"  # Nhạc nền cho màn hình Lose
+        self.open_sound = "assets/sound/opening_sound.mp3"  # Nhạc nền cho màn hình Open
+        self.play_sound = "assets/sound/playing_sound.mp3"  # Nhạc nền cho màn hình Play
+        self.win_sound = "assets/sound/winning_sound.mp3"  # Nhạc nền cho màn hình Win
+        self.lose_sound = "assets/sound/lose_sound.mp3"  # Nhạc nền cho màn hình Lose
 
         self.is_playing = False
 
